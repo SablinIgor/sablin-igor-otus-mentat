@@ -1,13 +1,20 @@
 <template>
   <div class="settings">
     <h1>This is an settings page</h1>
+    <calculationType></calculationType>
   </div>
 </template>
 
 <script>
 
+import calculationType from '../components/calculationType'
+
 export default {
-  name: 'settings'
+  name: 'settings',
+
+  components: {
+    calculationType
+  }
 }
 </script>
 <style scoped>
