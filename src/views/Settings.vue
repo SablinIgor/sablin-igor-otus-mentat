@@ -1,6 +1,11 @@
 <template>
   <div class="settings">
     <h1>This is an settings page</h1>
+    <Stats
+            daysCounter="10"
+            v-bind:wins="{ x: '20', y: '100'}"
+            accuracy="80"
+    />
     <CalculationType />
     <Complexity />
     <PlayTime />
@@ -12,11 +17,13 @@
 import CalculationType from '../components/CalculationType'
 import Complexity from '../components/Complexity'
 import PlayTime from '../components/PlayTime'
+import Stats from '../components/Stats'
 
 export default {
   name: 'settings',
 
   components: {
+    Stats,
     CalculationType,
     Complexity,
     PlayTime
