@@ -24,3 +24,5 @@ yarn run lint
 ```
 yarn run test:unit
 ```
+
+https://vuejsexamples.com/very-simple-vue-slider-bar-component/

@@ -3,6 +3,7 @@
     <h1>This is an settings page</h1>
     <CalculationType />
     <Complexity />
+    <PlayTime />
   </div>
 </template>
 
@@ -10,13 +11,15 @@
 
 import CalculationType from '../components/CalculationType'
 import Complexity from '../components/Complexity'
+import PlayTime from '../components/PlayTime'
 
 export default {
   name: 'settings',
 
   components: {
     CalculationType,
-    Complexity
+    Complexity,
+    PlayTime
   }
 }
 </script>
