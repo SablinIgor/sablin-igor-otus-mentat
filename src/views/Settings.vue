@@ -1,19 +1,22 @@
 <template>
   <div class="settings">
     <h1>This is an settings page</h1>
-    <calculationType></calculationType>
+    <CalculationType />
+    <Complexity />
   </div>
 </template>
 
 <script>
 
-import calculationType from '../components/calculationType'
+import CalculationType from '../components/CalculationType'
+import Complexity from '../components/Complexity'
 
 export default {
   name: 'settings',
 
   components: {
-    calculationType
+    CalculationType,
+    Complexity
   }
 }
 </script>

@@ -28,7 +28,7 @@ export default {
   },
 
   methods: {
-    check: function(e) {
+    check: function (e) {
       if (e.target.checked) {
         console.log(e.target.value + ' on')
       } else {
