@@ -1,6 +1,5 @@
 <template>
   <div class="settings">
-    <h1>This is an settings page</h1>
     <Stats
             daysCounter="10"
             v-bind:wins="{ x: '20', y: '100'}"
