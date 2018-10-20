@@ -1,15 +1,16 @@
 <template>
     <div>
-        <h2>Сложность</h2>
+        <h2>Complexity</h2>
         <VueSlideBar
                 v-model="slider.value"
-                :min="1"
+                :min="0"
                 :max="10"
                 :data="slider.data"
                 :processStyle="slider.processStyle"
                 :tooltipStyles="{ backgroundColor: 'red', borderColor: 'red' }"
                 :labelStyles="{color: 'white'}"
                 :range="slider.range"
+                @callbackRange="callbackRange"
         />
         <h2>Value: {{ slider.value }}</h2>
     </div>
@@ -23,11 +24,12 @@ export default {
   data () {
     return {
       slider: {
-        value: 1,
+        value: 0,
         processStyle: {
           backgroundColor: 'red'
         },
         data: [
+          0,
           1,
           2,
           3,
@@ -40,6 +42,9 @@ export default {
           10
         ],
         range: [
+          {
+            label: '0'
+          },
           {
             label: '1'
           },
@@ -76,6 +81,12 @@ export default {
   },
   components: {
     VueSlideBar
+  },
+
+  methods: {
+    callbackRange (val) {
+      this.$emit('receiveSetComplexity', val.label)
+    }
   }
 }
 </script>

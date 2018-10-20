@@ -1,13 +1,33 @@
 <template>
   <div class="settings">
-    <Stats
-            daysCounter="10"
-            v-bind:wins="{ x: '20', y: '100'}"
-            accuracy="80"
-    />
-    <CalculationType />
-    <Complexity />
-    <PlayTime />
+      <b-container class="bv-example-row">
+        <b-row>
+          <b-col>
+            <Stats
+                    daysCounter="10"
+                    v-bind:wins="{ x: '20', y: '100'}"
+                    accuracy="80"
+            />
+          </b-col>
+          <b-col>
+            <CalculationType @receiveCalculationType="setCalculationType" />
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col/>
+          <b-col>
+            <Complexity @receiveSetComplexity="setComplexity" />
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col class="text-center">
+            <b-button :disabled="isReadyToPlay" size="lg" variant="primary">Let's play!</b-button>
+          </b-col>
+          <b-col>
+            <PlayTime @receivePlayTime="setPlayTime"/>
+          </b-col>
+        </b-row>
+    </b-container>
   </div>
 </template>
 
@@ -26,6 +46,40 @@ export default {
     CalculationType,
     Complexity,
     PlayTime
+  },
+
+  data: function () {
+    return {
+      calculation: [],
+      complexity: 0,
+      playTime: 0
+    }
+  },
+
+  computed: {
+    isReadyToPlay: function () {
+      console.log('complexity')
+      console.log(this.complexity)
+      if (this.calculation.length === 0 ||
+        this.complexity === 0 ||
+        this.playTime === 0) {
+        return 'disabled'
+      }
+
+      return null
+    }
+  },
+
+  methods: {
+    setCalculationType (value) {
+      this.calculation = value
+    },
+    setComplexity (value) {
+      this.complexity = parseInt(value)
+    },
+    setPlayTime (value) {
+      this.playTime = parseInt(value)
+    }
   }
 }
 </script>

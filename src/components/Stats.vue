@@ -1,9 +1,9 @@
 <template>
-<div>
-    <h2>Статистика</h2>
-    <p>Тренировочный день: {{ daysCounter }}</p>
-    <p>Решено: {{ wins.x }} из {{ wins.y }}</p>
-    <p>Общая точность: {{ accuracy }}%</p>
+<div id="stats">
+    <h2>Statistics</h2>
+    <p>Days in game: {{ daysCounter }}</p>
+    <p>Positive: {{ wins.x }} from {{ wins.y }}</p>
+    <p>Total accuracy: {{ accuracy }}%</p>
 </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style scoped>
-    * {
+    #stats {
         color: white;
     }
 </style>

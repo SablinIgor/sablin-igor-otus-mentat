@@ -1,15 +1,16 @@
 <template>
     <div>
-        <h2>Время</h2>
+        <h2>Time to pay</h2>
         <VueSlideBar
                 v-model="slider.value"
-                :min="1"
+                :min="0"
                 :max="15"
                 :data="slider.data"
                 :processStyle="slider.processStyle"
                 :tooltipStyles="{ backgroundColor: 'red', borderColor: 'red' }"
                 :labelStyles="{color: 'white'}"
                 :range="slider.range"
+                @callbackRange="callbackRange"
         />
         <h2>Value: {{ slider.value }}</h2>
     </div>
@@ -23,11 +24,12 @@ export default {
   data () {
     return {
       slider: {
-        value: 1,
+        value: 0,
         processStyle: {
           backgroundColor: 'red'
         },
         data: [
+          0,
           1,
           2,
           3,
@@ -45,6 +47,9 @@ export default {
           15
         ],
         range: [
+          {
+            label: '0'
+          },
           {
             label: '1 min'
           },
@@ -105,6 +110,12 @@ export default {
   },
   components: {
     VueSlideBar
+  },
+
+  methods: {
+    callbackRange (val) {
+      this.$emit('receivePlayTime', val.label)
+    }
   }
 }
 </script>

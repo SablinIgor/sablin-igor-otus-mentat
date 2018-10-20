@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <h2>Типы вычислений</h2>
+    <div className="calcs">
+        <h2>Type of calculation</h2>
         <ul>
             <li v-for="item in typeCalculationList">
-                <input type="checkbox" :value="item" id="item" v-model="checkedCategories" @click="check($event)"> {{item}}
+                <input type="checkbox" :value="item" id="item" v-model="checkedCategories" @change="handleChange"> {{item}}
             </li>
         </ul>
         {{ checkedCategories }}
@@ -19,21 +19,18 @@ export default {
       checkedCategories: [],
       selected: '',
       typeCalculationList: [
-        'Сложение',
-        'Вычитание',
-        'Умножение',
-        'Деление'
+        'Addition',
+        'Subtraction',
+        'Multiplication',
+        'Division',
+        'Exponentiation'
       ]
     }
   },
 
   methods: {
-    check: function (e) {
-      if (e.target.checked) {
-        console.log(e.target.value + ' on')
-      } else {
-        console.log(e.target.value + ' off')
-      }
+    handleChange: function () {
+      this.$emit('receiveCalculationType', this.checkedCategories)
     }
   }
 }
@@ -42,5 +39,9 @@ export default {
 <style scoped>
     * {
         color: white;
+    }
+
+    ul {
+        list-style: none;
     }
 </style>
