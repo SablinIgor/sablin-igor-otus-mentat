@@ -1,12 +1,29 @@
 <template>
   <div class="play">
-    <h1>This is an play page</h1>
+    <Countdown
+            currenttask="1"
+            alltask="100"
+            timetoplay="10"
+    />
+    <PseudoCalc
+            task="99^3="
+            expectedresult="970299"
+    />
   </div>
 </template>
+
 <script>
 
+import PseudoCalc from '../components/PseudoCalc'
+import Countdown from '../components/Countdown'
+
 export default {
-  name: 'play'
+  name: 'play',
+
+  components: {
+    PseudoCalc,
+    Countdown
+  }
 }
 </script>
 <style scoped>

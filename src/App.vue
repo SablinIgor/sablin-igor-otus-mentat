@@ -16,12 +16,23 @@
 
   h2 {
     font-weight: 300;
-    font-size: 180%;
     word-spacing: 2px;
     text-align: center;
     margin-bottom: 30px;
     letter-spacing: 1px;
     text-transform: uppercase;
+  }
+
+  .lg_font {
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+  }
+
+  .md_font {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
   }
 
 #app {
@@ -34,6 +45,7 @@
 #nav {
   padding: 10px;
   text-align: center;
+  background-color: #a75915;
   a {
     font-weight: bold;
     color: #2c3e50;

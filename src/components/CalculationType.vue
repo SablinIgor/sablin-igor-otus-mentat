@@ -6,7 +6,6 @@
                 <input type="checkbox" :value="item" id="item" v-model="checkedCategories" @change="handleChange"> {{item}}
             </li>
         </ul>
-        {{ checkedCategories }}
     </div>
 </template>
 

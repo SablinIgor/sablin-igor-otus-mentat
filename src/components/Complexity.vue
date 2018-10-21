@@ -12,7 +12,6 @@
                 :range="slider.range"
                 @callbackRange="callbackRange"
         />
-        <h2>Value: {{ slider.value }}</h2>
     </div>
 </template>
 
