@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>Time to pay</h2>
+        <h2>Time to play</h2>
         <VueSlideBar
                 v-model="slider.value"
                 :min="0"
