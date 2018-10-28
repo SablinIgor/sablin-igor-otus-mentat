@@ -20,10 +20,11 @@ import VueSlideBar from 'vue-slide-bar'
 
 export default {
   name: 'Complexity',
+  props: ['initialValue'],
   data () {
     return {
       slider: {
-        value: 0,
+        value: this.initialValue,
         processStyle: {
           backgroundColor: 'red'
         },

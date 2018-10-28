@@ -20,10 +20,11 @@ import VueSlideBar from 'vue-slide-bar'
 
 export default {
   name: 'PlayTime',
+  props: ['time'],
   data () {
     return {
       slider: {
-        value: 0,
+        value: this.time,
         processStyle: {
           backgroundColor: 'red'
         },

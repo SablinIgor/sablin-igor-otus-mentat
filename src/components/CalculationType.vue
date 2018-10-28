@@ -3,7 +3,7 @@
         <h2>Type of calculation</h2>
         <ul>
             <li v-for="item in typeCalculationList">
-                <input type="checkbox" :value="item" id="item" v-model="checkedCategories" @change="handleChange"> {{item}}
+                <input type="checkbox" :value="item" id="item" v-model="localCheckedCategories" @change="handleChange"> {{item}}
             </li>
         </ul>
     </div>
@@ -12,10 +12,9 @@
 <script>
 export default {
   name: 'calculationType',
-
+  props: ['checkedCategories'],
   data () {
     return {
-      checkedCategories: [],
       selected: '',
       typeCalculationList: [
         'Addition',
@@ -23,13 +22,14 @@ export default {
         'Multiplication',
         'Division',
         'Exponentiation'
-      ]
+      ],
+      localCheckedCategories: this.checkedCategories
     }
   },
 
   methods: {
     handleChange: function () {
-      this.$emit('receiveCalculationType', this.checkedCategories)
+      this.$emit('receiveCalculationType', this.localCheckedCategories)
     }
   }
 }
