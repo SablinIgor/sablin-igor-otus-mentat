@@ -90,6 +90,12 @@ export default {
     )
   },
 
+  mounted: function () {
+    this.calculation = this.get_type_of_calcutation
+    this.complexity = this.get_complexity
+    this.playTime = this.get_time_to_play
+  },
+
   methods: {
     setCalculationType (value) {
       this.calculation = value
