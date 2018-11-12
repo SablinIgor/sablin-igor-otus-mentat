@@ -112,6 +112,7 @@ export default {
     play () {
       this.saveDaysInGame()
       console.log('Lets play!!!')
+      this.$router.push({ path: 'play' })
     },
     ...mapActions({
       saveDaysInGame: 'SAVE_DAYS',
