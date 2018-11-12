@@ -11,7 +11,7 @@
             task="99^3="
             expectedresult="970299"
     />
-    <b-modal ref="myModalRef" hide-footer title="Failed!">
+    <b-modal ref="myModalRef" hide-footer title="Failed!" v-model="showModal">
       <div class="d-block text-center">
         <h2>Timeout! Game over!!!</h2>
       </div>
@@ -39,10 +39,15 @@ export default {
       currentTimeLimit: 0,
       complexity: 0,
       playTime: 0,
-      isGameStarted: false
+      isGameStarted: false,
+      showModal: false
     }
   },
-
+  watch: {
+    showModal: function (newVal, oldVal) {
+      if (newVal === false) { this.hideModal() }
+    }
+  },
   computed: {
     ...mapGetters(
       {
